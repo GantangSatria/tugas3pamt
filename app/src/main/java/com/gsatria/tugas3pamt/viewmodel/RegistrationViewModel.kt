@@ -7,6 +7,7 @@ class RegistrationViewModel : ViewModel() {
     var nim = mutableStateOf("")
     var nama = mutableStateOf("")
     var email = mutableStateOf("")
+    var alamat = mutableStateOf("")
     var isRegistered = mutableStateOf(false)
 
     fun register() {
@@ -21,6 +22,7 @@ class RegistrationViewModel : ViewModel() {
         nim.value = ""
         nama.value = ""
         email.value = ""
+        alamat.value = ""
         isRegistered.value = false
     }
 }

@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gsatria.tugas3pamt.viewmodel.RegistrationViewModel
@@ -89,6 +90,18 @@ fun RegistrationScreen(viewModel: RegistrationViewModel) {
                     modifier = Modifier.fillMaxWidth()
                 )
 
+                Spacer(modifier = Modifier.height(12.dp))
+
+                // Input Alamat
+                OutlinedTextField(
+                    value = email,
+                    onValueChange = { viewModel.alamat.value = it },
+                    label = { Text("Alamat") },
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                    modifier = Modifier.fillMaxWidth()
+                )
+
                 Spacer(modifier = Modifier.height(20.dp))
 
                 // Tombol
@@ -150,4 +163,10 @@ fun SuccessMessage(
             Text("Daftar Lagi")
         }
     }
+}
+
+@Preview
+@Composable
+fun RegistrationScreenPreview() {
+    RegistrationScreen(viewModel = RegistrationViewModel())
 }

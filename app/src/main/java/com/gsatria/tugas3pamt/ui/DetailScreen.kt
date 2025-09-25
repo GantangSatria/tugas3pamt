@@ -80,6 +80,5 @@ fun DetailScreenPreview() {
     DetailScreen(
         viewModel = RegistrationViewModel(),
         onDaftarClick = {}
-
     )
 }
