@@ -55,10 +55,10 @@ fun DetailScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                Text("NIM: $nim")
-                Text("Nama: $nama")
-                Text("Email: $email")
-                Text("Alamat: $alamat")
+                Text("NIM: $nim", modifier = Modifier.padding(vertical = 4.dp), fontWeight = FontWeight.SemiBold)
+                Text("Nama: $nama", modifier = Modifier.padding(vertical = 4.dp), fontWeight = FontWeight.SemiBold)
+                Text("Email: $email", modifier = Modifier.padding(vertical = 4.dp), fontWeight = FontWeight.SemiBold)
+                Text("Alamat: $alamat", modifier = Modifier.padding(vertical = 4.dp), fontWeight = FontWeight.SemiBold)
 
                 Spacer(modifier = Modifier.height(20.dp))
 
@@ -77,8 +77,15 @@ fun DetailScreen(
 @Preview
 @Composable
 fun DetailScreenPreview() {
+    val dummyViewModel = RegistrationViewModel().apply {
+        nim.value = "235150701111036"
+        nama.value = "Gantang Satria"
+        email.value = "gantang610@student.ub.ac.id"
+        alamat.value = "Malang"
+    }
+
     DetailScreen(
-        viewModel = RegistrationViewModel(),
+        viewModel = dummyViewModel,
         onDaftarClick = {}
     )
 }
