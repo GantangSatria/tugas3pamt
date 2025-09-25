@@ -3,18 +3,13 @@ package com.gsatria.tugas3pamt
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.gsatria.tugas3pamt.ui.theme.Tugas3pamtTheme
 import androidx.activity.viewModels
 import androidx.compose.material3.Surface
-import com.gsatria.tugas3pamt.ui.RegistrationScreen
+import com.gsatria.tugas3pamt.screen.DetailScreen
+import com.gsatria.tugas3pamt.screen.LoginScreen
+import com.gsatria.tugas3pamt.screen.RegistrationScreen
 import com.gsatria.tugas3pamt.viewmodel.RegistrationViewModel
 
 class MainActivity : ComponentActivity() {
@@ -24,6 +19,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
                 Surface(modifier = Modifier.fillMaxSize()) {
+                    // DetailScreen(onDaftarClick = {}, viewModel = viewModel)
+//                    LoginScreen(onLoginClick = {}) { }
                     RegistrationScreen(viewModel)
             }
         }

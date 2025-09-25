@@ -1,4 +1,4 @@
-package com.gsatria.tugas3pamt.Screen
+package com.gsatria.tugas3pamt.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
