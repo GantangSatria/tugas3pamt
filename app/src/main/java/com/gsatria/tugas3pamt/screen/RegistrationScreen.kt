@@ -19,7 +19,10 @@ import com.gsatria.tugas3pamt.viewmodel.RegistrationViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RegistrationScreen(viewModel: RegistrationViewModel) {
+fun RegistrationScreen(
+    viewModel: RegistrationViewModel,
+    onSimpanClick: () -> Unit
+) {
     val nim by viewModel.nim
     val nama by viewModel.nama
     val email by viewModel.email
@@ -168,5 +171,5 @@ fun SuccessMessage(
 @Preview
 @Composable
 fun RegistrationScreenPreview() {
-    RegistrationScreen(viewModel = RegistrationViewModel())
+    // RegistrationScreen(viewModel = RegistrationViewModel())
 }
