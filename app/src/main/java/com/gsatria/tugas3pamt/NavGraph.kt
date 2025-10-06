@@ -17,7 +17,8 @@ object Routes {
 }
 
 @Composable
-fun NavGraph(viewModel: RegistrationViewModel) {
+// fun NavGraph(viewModel: RegistrationViewModel) {
+fun NavGraph() {
     val navController: NavHostController = rememberNavController()
 
     NavHost(
@@ -33,14 +34,14 @@ fun NavGraph(viewModel: RegistrationViewModel) {
 
         composable(Routes.REGISTER) {
             RegistrationScreen(
-                viewModel = viewModel,
+                // viewModel = viewModel,
                 onSimpanClick = { navController.navigate(Routes.DETAIL) }
             )
         }
 
         composable(Routes.DETAIL) {
             DetailScreen(
-                viewModel = viewModel,
+                // viewModel = viewModel,
                 onDaftarClick = { navController.navigate(Routes.REGISTER) }
             )
         }

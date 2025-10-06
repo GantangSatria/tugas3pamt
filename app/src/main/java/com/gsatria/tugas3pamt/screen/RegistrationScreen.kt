@@ -7,6 +7,9 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -20,13 +23,18 @@ import com.gsatria.tugas3pamt.viewmodel.RegistrationViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RegistrationScreen(
-    viewModel: RegistrationViewModel,
+    // viewModel: RegistrationViewModel,
     onSimpanClick: () -> Unit
 ) {
-    val nim by viewModel.nim
-    val nama by viewModel.nama
-    val email by viewModel.email
-    val isRegistered by viewModel.isRegistered
+//    val nim by viewModel.nim
+//    val nama by viewModel.nama
+//    val email by viewModel.email
+//    val isRegistered by viewModel.isRegistered
+
+    var nim by remember { mutableStateOf("") }
+    var nama by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var alamat by remember { mutableStateOf("") }
 
     Box(
         modifier = Modifier
@@ -63,7 +71,8 @@ fun RegistrationScreen(
                 // Input NIM
                 OutlinedTextField(
                     value = nim,
-                    onValueChange = { viewModel.nim.value = it },
+                    // onValueChange = { viewModel.nim.value = it },
+                    onValueChange = { nim = it },
                     label = { Text("NIM") },
                     singleLine = true,
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
@@ -75,7 +84,8 @@ fun RegistrationScreen(
                 // Input Nama
                 OutlinedTextField(
                     value = nama,
-                    onValueChange = { viewModel.nama.value = it },
+                    // onValueChange = { viewModel.nama.value = it },
+                    onValueChange = { nama = it },
                     label = { Text("Nama Lengkap") },
                     singleLine = true,
                     modifier = Modifier.fillMaxWidth()
@@ -86,7 +96,8 @@ fun RegistrationScreen(
                 // Input Email
                 OutlinedTextField(
                     value = email,
-                    onValueChange = { viewModel.email.value = it },
+                    // onValueChange = { viewModel.email.value = it },
+                    onValueChange = { email = it },
                     label = { Text("Email") },
                     singleLine = true,
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
@@ -98,7 +109,8 @@ fun RegistrationScreen(
                 // Input Alamat
                 OutlinedTextField(
                     value = email,
-                    onValueChange = { viewModel.alamat.value = it },
+                    // onValueChange = { viewModel.alamat.value = it },
+                    onValueChange = { alamat = it },
                     label = { Text("Alamat") },
                     singleLine = true,
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
@@ -109,7 +121,8 @@ fun RegistrationScreen(
 
                 // Tombol
                 Button(
-                    onClick = { viewModel.register() },
+                    // onClick = { viewModel.register() },
+                    onClick = onSimpanClick,
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp),
@@ -120,14 +133,14 @@ fun RegistrationScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                if (isRegistered) {
-                    SuccessMessage(
-                        nim = nim,
-                        nama = nama,
-                        email = email,
-                        onReset = { viewModel.reset() }
-                    )
-                }
+//                if (isRegistered) {
+//                    SuccessMessage(
+//                        nim = nim,
+//                        nama = nama,
+//                        email = email,
+//                        onReset = { viewModel.reset() }
+//                    )
+//                }
             }
         }
     }

@@ -16,13 +16,19 @@ import com.gsatria.tugas3pamt.viewmodel.RegistrationViewModel
 
 @Composable
 fun DetailScreen(
-    viewModel: RegistrationViewModel,
+    // viewModel: RegistrationViewModel,
     onDaftarClick: () -> Unit
 ) {
-    val nim = viewModel.nim.value
-    val nama = viewModel.nama.value
-    val email = viewModel.email.value
-    val alamat = viewModel.alamat.value
+//    val nim = viewModel.nim.value
+//    val nama = viewModel.nama.value
+//    val email = viewModel.email.value
+//    val alamat = viewModel.alamat.value
+
+    // data sementara
+    val nama = "Gantang Satria Yudha"
+    val nim = "235150701111036"
+    val email = "gantang610@student.ub.ac.id"
+    val alamat = "malang"
 
     Box(
         modifier = Modifier
@@ -77,15 +83,15 @@ fun DetailScreen(
 @Preview
 @Composable
 fun DetailScreenPreview() {
-    val dummyViewModel = RegistrationViewModel().apply {
-        nim.value = "235150701111036"
-        nama.value = "Gantang Satria"
-        email.value = "gantang610@student.ub.ac.id"
-        alamat.value = "Malang"
-    }
+//    val dummyViewModel = RegistrationViewModel().apply {
+//        nim.value = "235150701111036"
+//        nama.value = "Gantang Satria"
+//        email.value = "gantang610@student.ub.ac.id"
+//        alamat.value = "Malang"
+//    }
 
     DetailScreen(
-        viewModel = dummyViewModel,
+//        viewModel = dummyViewModel,
         onDaftarClick = {}
     )
 }
